@@ -1,4 +1,5 @@
 ﻿using MemberRegistration.Business.Abstract;
+using MemberRegistration.Business.ServiceAdapters.Kps;
 using MemberRegistration.DataAccess.Abstract;
 using MemberRegistration.Entities.Concrete;
 using System;
@@ -12,14 +13,19 @@ namespace MemberRegistration.Business.Concrete
     public class MemberManager : IMemberService
     {
         private readonly IMemberDal _memberDal;
+        private readonly IKpsService _kpsService;
 
-        public MemberManager(IMemberDal memberDal)
+        public MemberManager(IMemberDal memberDal, IKpsService kpsService)
         {
             _memberDal = memberDal;
+            _kpsService = kpsService;
         }
 
         public void Add(Member member)
         {
+            if (_kpsService.Validate(member) == false)
+                throw new Exception("Kullanıcı bilgileri hatalı!");
+
             _memberDal.Add(member);
         }
     }
