@@ -18,7 +18,7 @@ namespace MemberRegistration.DataAccess.Concrete.EntityFramework.Mappings
             Property(x => x.Id).HasColumnName("Id");
             Property(x => x.TcNo).HasColumnName("TcNo");
             Property(x => x.Email).HasColumnName("Email");
-            Property(x => x.FirstNane).HasColumnName("FirstNane");
+            Property(x => x.FirstName).HasColumnName("FirstName");
             Property(x => x.LastName).HasColumnName("LastName");
             Property(x => x.DateOfBirth).HasColumnName("DateOfBirth");
         }

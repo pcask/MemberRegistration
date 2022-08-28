@@ -14,7 +14,7 @@ namespace MemberRegistration.Business.ServiceAdapters.Kps
         {
             KPSPublicSoapClient client = new KPSPublicSoapClient();
             return client.TCKimlikNoDogrula(Convert.ToInt64(member.TcNo),
-                                            member.FirstNane.ToUpper(),
+                                            member.FirstName.ToUpper(),
                                             member.LastName.ToUpper(),
                                             member.DateOfBirth.Year);
 
