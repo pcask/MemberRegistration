@@ -20,14 +20,33 @@ namespace DevFramework.Core.Utilities.Mappings
 
                 IMapper mapper = config.CreateMapper();
 
-                var result = mapper.Map<List<T>>(list);
-                return result;
+                return mapper.Map<List<T>>(list);
             }
             catch (Exception)
             {
-                throw;
+                throw new Exception("Mapping operation has failed!");
             }
 
+        }
+
+
+        public static TDestination Map<TSource, TDestination>(TSource source)
+        {
+            try
+            {
+                MapperConfiguration config = new MapperConfiguration(cfg =>
+                {
+                    cfg.CreateMap<TSource, TDestination>().IgnoreAllOfIEntity();
+                });
+
+                IMapper mapper = config.CreateMapper();
+
+                return mapper.Map<TDestination>(source);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Mapping operation has failed!");
+            }
         }
     }
 }

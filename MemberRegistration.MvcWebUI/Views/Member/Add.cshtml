@@ -1,4 +1,5 @@
-﻿
+﻿@model MemberRegistration.MvcWebUI.Models.MemberViewModel
+
 @{
     Layout = null;
 }
@@ -8,7 +9,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Add</title>
+    <title>Sing Up</title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -18,7 +19,8 @@
                 <h2>Sing Up</h2>
                 <p>Quickly and easily.</p>
             </div>
-            <form class="row g-3">
+            @using (Html.BeginForm("Add", "Member", FormMethod.Post, new { @class = "row g-3" }))
+            {
                 <div class="col-md-6">
                     <label for="FirstName" class="form-label">First Name</label>
                     <input type="text" class="form-control" id="FirstName" name="FirstName">
@@ -37,13 +39,13 @@
                 </div>
                 <div class="col-md-12">
                     <label for="DateOfBirth" class="form-label">Date Of Birth</label>
-                    <input type="text" class="form-control" id="DateOfBirth" name="DateOfBirth" placeholder="dd.mm.yyyy">
+                    <input type="text" class="form-control" id="DateOfBirth" name="DateOfBirth" placeholder="dd/mm/yyyy">
                 </div>
-               
+
                 <div class="col-12 d-grid">
                     <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
                 </div>
-            </form>
+            }
         </div>
     </div>
 </body>
