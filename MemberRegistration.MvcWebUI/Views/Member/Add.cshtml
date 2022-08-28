@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="text-center mt-5">
+                <h2>Sing Up</h2>
+                <p>Quickly and easily.</p>
+            </div>
+            <form class="row g-3">
+                <div class="col-md-6">
+                    <label for="FirstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="FirstName" name="FirstName">
+                </div>
+                <div class="col-md-6">
+                    <label for="LastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="LastName" name="LastName">
+                </div>
+                <div class="col-12">
+                    <label for="Email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="Email" name="Email" placeholder="emailaddress@gmail.com">
+                </div>
+                <div class="col-12">
+                    <label for="TcNo" class="form-label">TC Identity Number</label>
+                    <input type="text" class="form-control" id="TcNo" name="TcNo">
+                </div>
+                <div class="col-md-12">
+                    <label for="DateOfBirth" class="form-label">Date Of Birth</label>
+                    <input type="text" class="form-control" id="DateOfBirth" name="DateOfBirth" placeholder="dd.mm.yyyy">
+                </div>
+               
+                <div class="col-12 d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
