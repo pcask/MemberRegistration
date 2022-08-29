@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MemberRegistration.Business.DependencyResolvers.Ninject
 {
-    public class ValidatonModule : NinjectModule
+    public class ValidationModule : NinjectModule
     {
         public override void Load()
         {

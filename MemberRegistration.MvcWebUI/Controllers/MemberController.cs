@@ -22,15 +22,15 @@ namespace MemberRegistration.MvcWebUI.Controllers
         // GET: Member
         public ActionResult Add()
         {
-            return View(new MemberViewModel());
+            return View(new MemberAddViewModel());
         }
 
         [HttpPost]
-        public ActionResult Add(MemberViewModel model)
+        public ActionResult Add(MemberAddViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var member = AutoMapperHelper.Map<MemberViewModel, Member>(model);
+                var member = AutoMapperHelper.Map<MemberAddViewModel, Member>(model);
 
                 _memberService.Add(member);
             }
