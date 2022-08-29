@@ -24,8 +24,18 @@
                 <h1>Sing Up</h1>
                 <p>Quickly and easily.</p>
             </div>
+
+
             @using (Html.BeginForm("Add", "Member", FormMethod.Post, new { @class = "row g-3" }))
             {
+
+                if (!ViewData.ModelState.IsValid)
+                {
+                    <div class="alert alert-danger text-center" role="alert">
+                        @Html.ValidationMessage("general")
+                    </div>
+                }
+
                 <div class="col-md-6">
                     <label for="FirstName" class="form-label">First Name</label>
                     @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
